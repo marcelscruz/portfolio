@@ -1,0 +1,48 @@
+.welcome {
+  height: 96vh;
+  margin-top: 48px; /* 2pxTHAN MENU HEIGHT TO FILL GAP BETWEEN PICTURE AND MENU */
+  position: relative;
+  width: 100vw;
+}
+
+.title {
+  margin: 15% 0 0 10%;
+  text-align: left;
+}
+
+.title h1 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 7vw;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.title--highlight {
+  color: #496f60;
+}
+
+.title h2 {
+  border-top: 0.15vw solid #2e2e2e;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.8vw;
+  font-weight: 400;
+  padding-top: 10px;
+  width: 22.5vw;
+}
+
+.welcome__content {
+  /* background: lightblue; */
+  float: left;
+  height: inherit;
+  width: 60vw;
+}
+
+.welcome__picture {
+  background: url('/images/profile-web.jpg') no-repeat 35% center / cover;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+  float: right;
+  height: 105%;
+  shape-margin: 20px;
+  shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+  width: 40vw;
+}

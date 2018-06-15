@@ -1,0 +1,83 @@
+.experience {
+  /* background: white; */
+  /* height: 100vh; */
+  padding: 5vh 0;
+  position: relative;
+  top: -2px; /* TO FILL GAP BETWEEN PICTURE AND MENU*/
+  width: 100vw;
+}
+
+.experience__item {
+  align-items: center;
+  display: flex;
+  padding: 3vw;
+}
+
+.experience__image {
+  border: #ccc 2px solid;
+  border-radius: 5px;
+  box-shadow: 0 1px 10px #2e2e2e;
+  height: 37vh;
+  margin-left: 1vw;
+  transition: transform 0.4s ease-in-out;
+  width: 35vw;
+}
+
+.experience__image:hover {
+  transform: scale(1.1);
+  transition: transform 0.7s ease-in-out;
+}
+
+.experience__description {
+  /* background: lightcoral; */
+  color: #2e2e2e;
+  font-family: 'Raleway', sans-serif;
+  padding: 2vw 2vw 2vw 5vw;
+  text-align: left;
+  width: 65%;
+}
+
+.experience__description h2 {
+  font-size: 4vh;
+  font-weight: 700;
+}
+
+.experience__description h2 span {
+  font-size: 3vh;
+  font-weight: 400;
+}
+
+.experience__description h3 {
+  font-size: 2.5vh;
+  font-weight: 400;
+  margin: 3vh 0 2vh 0;
+}
+
+.experience__description h4 {
+  font-weight: 400;
+  margin: 1vh 0 2vh 0;
+}
+
+.external-link {
+  border-bottom: transparent 1px solid;
+  font-size: 2.6vh;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s linear;
+}
+
+.external-link:hover {
+  border-color: #2e2e2e;
+}
+
+.experience__item__divisor {
+  background: #666;
+  border-bottom: #666 0.2vh solid;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-top: #666 0.2vh solid;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  margin: 5vh auto;
+  width: 80vh;
+}

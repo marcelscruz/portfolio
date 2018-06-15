@@ -1,0 +1,70 @@
+.contact {
+  background: #2e2e2e;
+  border-top: #ccc 2px solid;
+  box-shadow: 0 0 10px #2e2e2e;
+  height: 60vh;
+  padding: 5vh 5vw 10vh;
+  width: 100vw;
+}
+
+.contact__sections {
+  /* background: lightcoral; */
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.contact h2 {
+  color: #eee;
+  font-family: 'Raleway', sans-serif;
+  font-size: 3.5vh;
+  margin-bottom: 5vh;
+}
+
+.contact__form {
+  align-items: flex-start;
+  /* background: lightblue; */
+  display: flex;
+  flex: 3;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.inputs {
+  display: flex;
+  height: 15%;
+  width: 100%;
+}
+
+.form__input {
+  border: #ccc 2px solid;
+  border-radius: 3px;
+  box-shadow: 0 1px 10px #2e2e2e;
+  color: #2e2e2e;
+  font-family: 'Raleway', sans-serif;
+  font-size: 2.5vh;
+  outline: none;
+  padding-left: 10px;
+  width: 45%;
+}
+
+.form__input:first-of-type {
+  margin-right: 5%;
+}
+
+.textarea {
+  /* margin: 0 auto; */
+  height: 70%;
+  padding: 10px 0 0 10px;
+  resize: none;
+  width: 95%;
+}
+
+.form__button {
+  width: 8vw;
+}
+
+.social-medias {
+  flex: 1;
+}
