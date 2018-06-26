@@ -63,8 +63,14 @@
 }
 
 .submit-result {
+  /* background: red; */
+  height: 2.6vh;
+}
+
+.submit-result h4 {
   color: #eee;
   font-style: italic;
+  font-size: 2.5vh;
   font-weight: 200;
   letter-spacing: 0.05vw;
 }
@@ -130,7 +136,7 @@
 .fab {
   /* background: blue; */
   color: #eee;
-  padding: 0px 5vh 0 0;
+  padding: 0px 2vh 0 0;
   font-size: 30px;
   font-size: 3.2vh;
   width: 40px;
@@ -140,12 +146,15 @@
 
 .download-cv {
   /* background: red; */
+  margin-top: 2vh;
   text-align: left;
   /* width: auto; */
 }
 
-.contact__button {
+.contact__button,
+.download__button {
   background: #2e2e2e;
+  border: #eee 1px solid;
   border-radius: 3px;
   color: #eee;
   cursor: pointer;
@@ -158,7 +167,16 @@
   width: 11vw;
 }
 
-.contact__button:hover {
+.contact__button:hover,
+.contact__button:focus,
+.download__button:hover,
+.download__button:focus {
   background: #eee;
   color: #2e2e2e;
+}
+
+.download__button {
+  border: #eee 1px solid;
+  padding: 1vh 3vw;
+  text-decoration: none;
 }

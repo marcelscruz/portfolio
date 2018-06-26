@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import scrollToComponent from 'react-scroll-to-component'
 
 // ********** COMPONENTS ********** //
 import Menu from './components/Menu'
@@ -8,12 +9,21 @@ import Experience from './components/Experience'
 import Contact from './components/Contact'
 
 class App extends Component {
+  scrollPage = component => {
+    console.log(component)
+    scrollToComponent(this.About)
+  }
+
   render() {
     return (
       <div className="app">
-        <Menu />
+        <Menu scrollPage={this.scrollPage} />
         <Welcome />
-        <About />
+        <About
+          ref={section => {
+            this.About = section
+          }}
+        />
         <Experience />
         <Contact />
       </div>

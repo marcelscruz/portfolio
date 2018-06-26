@@ -36,3 +36,18 @@
   font-weight: 200;
   margin: 0 2vw;
 }
+
+.menu__button {
+  background: none;
+  border: none;
+  border-bottom: transparent 1px solid;
+  color: #eee;
+  cursor: pointer;
+  font-weight: 200;
+  outline: none;
+  transition: 0.3s linear;
+}
+
+.menu__button:hover {
+  border-color: #eee;
+}

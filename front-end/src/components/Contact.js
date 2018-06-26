@@ -33,20 +33,45 @@ class Contact extends Component {
     })
   }
 
+  submitLoader = () => {
+    this.setState({
+      submitResult: 'Sending',
+    })
+
+    this.startSubmitLoader = setInterval(() => {
+      const submitResult = this.state.submitResult
+
+      if (submitResult === 'Sending...') {
+        this.setState({
+          submitResult: 'Sending',
+        })
+      } else {
+        this.setState(prevState => ({
+          submitResult: prevState.submitResult.concat('.'),
+        }))
+      }
+    }, 200)
+  }
+
+  clearForm = () => {
+    this.setState({
+      name: '',
+      email: '',
+      message: '',
+    })
+  }
+
   onSubmit = e => {
     e.preventDefault()
+
+    this.submitLoader()
 
     const name = this.state.name
     const email = this.state.email
     const message = this.state.message
 
-    console.log('name', name)
-    console.log('email', email)
-    console.log('message', message)
-
     axios({
       method: 'POST',
-      // url: 'http://localhost:3002/send',
       url: 'https://f57gdvhq7a.execute-api.us-east-1.amazonaws.com/prod',
       contentType: 'application/json',
       data: JSON.stringify({
@@ -56,11 +81,17 @@ class Contact extends Component {
       }),
     }).then(response => {
       if (response.data.result === 'success') {
-        alert('Message Sent.')
-        // this.resetForm()
+        this.setState({
+          submitResult: "Message received, I'll contact you soon!",
+        })
+        clearInterval(this.startSubmitLoader)
+        this.clearForm()
       } else {
-        console.log(response)
-        alert('else here')
+        this.setState({
+          submitResult: 'Something went wrong, please try again.',
+        })
+        clearInterval(this.startSubmitLoader)
+        this.clearForm()
       }
     })
   }
@@ -96,7 +127,9 @@ class Contact extends Component {
               onChange={this.onMessageChange}
               required
             />
-            <h4 className="submit-result">{this.state.submitResult}</h4>
+            <div className="submit-result">
+              <h4>{this.state.submitResult}</h4>
+            </div>
             <button className="contact__button">Send</button>
           </form>
           <div className="social-medias">
@@ -122,7 +155,13 @@ class Contact extends Component {
               </a>
             </div>
             <div className="download-cv">
-              <button className="contact__button">Download CV</button>
+              <a
+                className="download__button"
+                href="resume.pdf"
+                download="MarcelCruz-Resume.pdf"
+              >
+                Download CV
+              </a>
             </div>
           </div>
         </div>
