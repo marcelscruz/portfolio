@@ -10,7 +10,7 @@
 .contact__sections {
   /* background: lightcoral; */
   display: flex;
-  height: 85%;
+  height: 90%;
   width: 100%;
 }
 
@@ -56,10 +56,17 @@
 
 .textarea {
   /* margin: 0 auto; */
-  height: 70%;
+  height: 60%;
   padding: 10px 0 0 10px;
   resize: none;
   width: 95%;
+}
+
+.submit-result {
+  color: #eee;
+  font-style: italic;
+  font-weight: 200;
+  letter-spacing: 0.05vw;
 }
 
 .form__button {
@@ -80,18 +87,18 @@
   color: #eee;
   font-size: 2.8vh;
   left: -10px;
-  margin: 0 20px 20px;
+  margin: 0 0 20px;
   /* padding: 0 20px; */
-  position: relative;
+  /* position: relative; */
+  text-align: left;
 }
 
 .social-medias__button {
   align-items: center;
   align-self: flex-start;
-  background: blue;
-  border-radius: 3px;
+  /* background: blue; */
   display: flex;
-  margin: 0 30%;
+  /* margin: 0 30%; */
   /* height: 60px; */
   /* justify-content: flex-end; */
   /* width: 100px; */
@@ -103,7 +110,7 @@
   display: flex;
   font-size: 2.5vh;
   justify-content: center;
-  margin: 10px 0;
+  margin-bottom: 2vh;
   padding-bottom: 5px;
   text-decoration: none;
   transition: 0.3s linear;
@@ -132,6 +139,26 @@
 }
 
 .download-cv {
-  background: red;
-  width: auto;
+  /* background: red; */
+  text-align: left;
+  /* width: auto; */
+}
+
+.contact__button {
+  background: #2e2e2e;
+  border-radius: 3px;
+  color: #eee;
+  cursor: pointer;
+  /* color: #2e2e2e; */
+  font-size: 2.3vh;
+  height: 5vh;
+  /* margin-top: 7vh; */
+  outline: none;
+  transition: 0.2s linear;
+  width: 11vw;
+}
+
+.contact__button:hover {
+  background: #eee;
+  color: #2e2e2e;
 }

@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios'
 
 class Contact extends Component {
@@ -10,6 +8,7 @@ class Contact extends Component {
       name: '',
       email: '',
       message: '',
+      submitResult: '',
     }
   }
 
@@ -56,11 +55,12 @@ class Contact extends Component {
         message: message,
       }),
     }).then(response => {
-      if (response.data.msg === 'success') {
+      if (response.data.result === 'success') {
         alert('Message Sent.')
         // this.resetForm()
-      } else if (response.data.msg === 'fail') {
-        alert('Message failed to send.')
+      } else {
+        console.log(response)
+        alert('else here')
       }
     })
   }
@@ -75,25 +75,29 @@ class Contact extends Component {
               <input
                 type="text"
                 className="form__input input__name"
-                placeholder="Name"
+                placeholder="*Name"
                 value={this.state.name}
                 onChange={this.onNameChange}
+                required
               />
               <input
-                type="text"
+                type="email"
                 className="form__input input__email"
-                placeholder="Email"
+                placeholder="*Email"
                 value={this.state.email}
                 onChange={this.onEmailChange}
+                required
               />
             </div>
             <textarea
               className="form__input textarea"
-              placeholder="Message"
+              placeholder="*Message"
               value={this.state.message}
               onChange={this.onMessageChange}
+              required
             />
-            <button className="form__button">Send</button>
+            <h4 className="submit-result">{this.state.submitResult}</h4>
+            <button className="contact__button">Send</button>
           </form>
           <div className="social-medias">
             <h3>Elsewhere</h3>
@@ -101,19 +105,24 @@ class Contact extends Component {
               <a
                 href="https://www.linkedin.com/in/marcelscruz/"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <i className="fab fa-linkedin" />
                 <h4>LinkedIn</h4>
               </a>
             </div>
             <div className="social-medias__button">
-              <a href="https://https://github.com/marcelscruz" target="_blank">
+              <a
+                href="https://https://github.com/marcelscruz"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <i className="fab fa-github" />
                 <h4>GitHub</h4>
               </a>
             </div>
             <div className="download-cv">
-              <button>Download CV</button>
+              <button className="contact__button">Download CV</button>
             </div>
           </div>
         </div>
