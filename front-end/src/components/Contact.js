@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios'
 
 class Contact extends Component {
@@ -45,12 +47,14 @@ class Contact extends Component {
 
     axios({
       method: 'POST',
-      url: 'http://localhost:3002/send',
-      data: {
-        name,
-        email,
-        message,
-      },
+      // url: 'http://localhost:3002/send',
+      url: 'https://f57gdvhq7a.execute-api.us-east-1.amazonaws.com/prod',
+      contentType: 'application/json',
+      data: JSON.stringify({
+        name: name,
+        email: email,
+        message: message,
+      }),
     }).then(response => {
       if (response.data.msg === 'success') {
         alert('Message Sent.')
@@ -93,6 +97,24 @@ class Contact extends Component {
           </form>
           <div className="social-medias">
             <h3>Elsewhere</h3>
+            <div className="social-medias__button">
+              <a
+                href="https://www.linkedin.com/in/marcelscruz/"
+                target="_blank"
+              >
+                <i className="fab fa-linkedin" />
+                <h4>LinkedIn</h4>
+              </a>
+            </div>
+            <div className="social-medias__button">
+              <a href="https://https://github.com/marcelscruz" target="_blank">
+                <i className="fab fa-github" />
+                <h4>GitHub</h4>
+              </a>
+            </div>
+            <div className="download-cv">
+              <button>Download CV</button>
+            </div>
           </div>
         </div>
       </div>
