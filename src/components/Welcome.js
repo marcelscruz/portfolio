@@ -20,7 +20,10 @@ class Welcome extends Component {
           </Fade>
         </div>
         <Fade right>
-          <div className="welcome__picture" />
+          <div className="welcome__picture picture__desktop" />
+        </Fade>
+        <Fade bottom>
+          <div className="welcome__picture picture__mobile" />
         </Fade>
       </div>
     )

@@ -79,3 +79,19 @@
     width: 100vw;
   }
 }
+
+.picture__desktop {
+  display: inline-block;
+
+  @media (max-width: $mobile) {
+    display: none;
+  }
+}
+
+.picture__mobile {
+  display: none;
+
+  @media (max-width: $mobile) {
+    display: inline-block;
+  }
+}

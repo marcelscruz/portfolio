@@ -1,9 +1,6 @@
 .experience {
-  /* background: #eee; */
-  /* height: 100vh; */
   padding: 5vh 0;
   position: relative;
-  // top: -2px; /* TO FILL GAP BETWEEN PICTURE AND MENU*/
   width: 100vw;
 }
 
@@ -11,64 +8,90 @@
   align-items: center;
   display: flex;
   padding: 3vw;
+
+  @media (max-width: $mobile) {
+    flex-direction: column;
+  }
 }
 
 .experience__image {
-  border: #ccc 2px solid;
+  border: $border;
   border-radius: 5px;
-  box-shadow: 0 1px 10px #2e2e2e;
+  box-shadow: $shadow;
   height: 37vh;
   margin-left: 1vw;
   transition: transform 0.4s ease-in-out;
-  width: 35vw;
+  width: 33vw;
+
+  @media (max-width: $mobile) {
+    height: 30vh;
+    margin: 2vh 0;
+    width: 80vw;
+  }
 }
 
 .experience__image:hover {
   transform: scale(1.1);
   transition: transform 0.7s ease-in-out;
+
+  @media (max-width: $mobile) {
+    transform: scale(1);
+  }
 }
 
 .experience__description {
-  /* background: lightcoral; */
-  color: #2e2e2e;
-  font-family: 'Raleway', sans-serif;
   padding: 2vw 2vw 2vw 5vw;
-  text-align: left;
   width: 65%;
+
+  @media (max-width: $mobile) {
+    padding: 5vw 2vw 2vw 2vw;
+    text-align: center;
+    width: 89%;
+  }
 }
 
 .experience__description h2 {
   font-size: 4vh;
-  font-weight: 700;
+  font-weight: $thick;
 }
 
 .experience__description h2 span {
   font-size: 3vh;
-  font-weight: 400;
+  font-weight: $medium;
 }
 
 .experience__description h3 {
   font-size: 2.5vh;
-  font-weight: 400;
+  font-weight: $medium;
   margin: 3vh 0 2vh 0;
+  text-align: justify;
 }
 
 .experience__description h4 {
   font-size: 2vh;
-  font-weight: 400;
+  font-weight: $medium;
   margin: 1vh 0 3vh 0;
 }
 
 .external-link {
-  border-bottom: transparent 1px solid;
-  font-size: 2.6vh;
-  font-weight: 700;
+  border-bottom: $border-transparent;
+  color: $base-dark;
+  font-size: 1.5vw;
+  font-weight: $thick;
   text-decoration: none;
   transition: 0.3s linear;
+
+  @media (max-width: $mobile) {
+    font-size: 5vw;
+  }
 }
 
 .external-link:hover {
-  border-color: #2e2e2e;
+  border-color: $base-dark;
+
+  @media (max-width: $mobile) {
+    border-color: transparent;
+  }
 }
 
 .experience__item__divisor {
@@ -80,5 +103,9 @@
   border-top-left-radius: 50%;
   border-top-right-radius: 50%;
   margin: 5vh auto;
-  width: 80vh;
+  width: 50vw;
+
+  @media (max-width: $mobile) {
+    width: 80vw;
+  }
 }

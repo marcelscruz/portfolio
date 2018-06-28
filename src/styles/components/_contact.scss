@@ -1,30 +1,34 @@
 .contact {
-  background: #2e2e2e;
-  border-top: #ccc 2px solid;
-  box-shadow: 0 0 10px #2e2e2e;
-  height: 70vh;
+  background: $base-dark;
+  border-top: $border;
+  box-shadow: $shadow;
   padding: 5vh 5vw 10vh;
+  text-align: center;
   width: 100vw;
 }
 
 .contact__sections {
-  /* background: lightcoral; */
   display: flex;
   height: 90%;
   width: 100%;
+
+  @media (max-width: $mobile) {
+    flex-direction: column;
+  }
 }
 
 .contact h2 {
-  color: #eee;
-  font-family: 'Raleway', sans-serif;
-  font-size: 3.5vh;
+  color: $base-light;
+  font-size: 2.5vw;
   margin-bottom: 5vh;
+
+  @media (max-width: $mobile) {
+    font-size: 6vw;
+  }
 }
 
 .contact__form {
   align-items: flex-start;
-  /* background: lightblue; */
-  /* border-right: #eee 2px solid; */
   display: flex;
   flex: 3;
   flex-direction: column;
@@ -34,20 +38,28 @@
 
 .inputs {
   display: flex;
-  height: 12%;
   width: 100%;
+
+  @media (max-width: $mobile) {
+    flex-direction: column;
+  }
 }
 
 .form__input {
-  border: #ccc 2px solid;
+  border: $border;
   border-radius: 3px;
-  box-shadow: 0 1px 10px #2e2e2e;
-  color: #2e2e2e;
-  font-family: 'Raleway', sans-serif;
-  font-size: 2.5vh;
+  font-size: 1.5vw;
+  height: 4vw;
   outline: none;
   padding-left: 10px;
   width: 45%;
+
+  @media (max-width: $mobile) {
+    font-size: 4vw;
+    height: 12vw;
+    margin-top: 2vw;
+    width: 100%;
+  }
 }
 
 .form__input:first-of-type {
@@ -55,127 +67,131 @@
 }
 
 .textarea {
-  /* margin: 0 auto; */
-  height: 60%;
+  height: 20vw;
+  margin-top: 2vw;
   padding: 10px 0 0 10px;
   resize: none;
   width: 95%;
+
+  @media (max-width: $mobile) {
+    height: 40vw;
+    width: 100%;
+  }
 }
 
 .submit-result {
-  /* background: red; */
   height: 2.6vh;
 }
 
 .submit-result h4 {
-  color: #eee;
+  color: $base-light;
   font-style: italic;
   font-size: 2.5vh;
-  font-weight: 200;
+  font-weight: $thin;
   letter-spacing: 0.05vw;
 }
 
-.form__button {
-  width: 8vw;
-}
-
 .social-medias {
-  /* background: blue; */
-  /* align-items: flex-start; */
+  color: $base-light;
   flex: 1;
   display: flex;
   flex-direction: column;
-  /* padding: 0 0 0 50px; */
-  /* text-align: center; */
+
+  @media (max-width: $mobile) {
+    align-items: center;
+    margin-top: 7vw;
+  }
 }
 
 .social-medias h3 {
-  color: #eee;
   font-size: 2.8vh;
   left: -2px;
   margin: 0 0 20px;
-  /* padding: 0 20px; */
   position: relative;
   text-align: left;
+
+  @media (max-width: $mobile) {
+    left: 0;
+  }
 }
 
 .social-medias__button {
   align-items: center;
   align-self: flex-start;
-  /* background: blue; */
   display: flex;
-  /* margin: 0 30%; */
-  /* height: 60px; */
-  /* justify-content: flex-end; */
-  /* width: 100px; */
+
+  @media (max-width: $mobile) {
+    align-self: center;
+  }
 }
 
 .social-medias__button a {
   align-items: center;
-  border-bottom: transparent 1px solid;
+  border-bottom: $border-transparent;
   display: flex;
-  font-size: 2.5vh;
+  font-size: 1.5vw;
   justify-content: center;
   margin-bottom: 2vh;
   padding-bottom: 5px;
   text-decoration: none;
   transition: 0.3s linear;
+
+  @media (max-width: $mobile) {
+    font-size: 4vw;
+  }
 }
 
 .social-medias__button a:hover {
-  border-color: #eee;
+  border-color: $base-light;
 }
 
 .social-medias__button h4 {
-  /* background: red; */
-  color: #eee;
-  font-weight: 200;
+  color: $base-light;
+  font-weight: $thin;
   letter-spacing: 0.05vw;
 }
 
 .fab {
-  /* background: blue; */
-  color: #eee;
+  color: $base-light;
   padding: 0px 2.5vw 0 0;
-  /* padding: 0px 2vh 0 0; */
-  font-size: 30px;
   font-size: 3.2vh;
   width: 40px;
-  /* text-align: center; */
   text-decoration: none;
 }
 
 .download-cv {
-  /* background: red; */
   margin-top: 2vh;
   text-align: left;
-  /* width: auto; */
 }
 
 .contact__button,
 .download__button {
-  background: #2e2e2e;
-  border: #eee 1px solid;
+  background: $base-dark;
+  border: $border;
   border-radius: 3px;
-  color: #eee;
+  color: $base-light;
   cursor: pointer;
   font-size: 2.3vh;
   height: 5vh;
   outline: none;
   transition: 0.2s linear;
   width: 11vw;
+
+  @media (max-width: $mobile) {
+    width: 20vw;
+  }
 }
 
 .contact__button:hover,
 .contact__button:focus,
 .download__button:hover,
 .download__button:focus {
-  background: #eee;
-  color: #2e2e2e;
+  background: $base-light;
+  color: $base-dark;
 }
 
 .download__button {
-  border: #eee 1px solid;
+  border: $border;
   padding: 1vh 3vw;
   text-decoration: none;
 }
