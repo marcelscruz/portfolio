@@ -7,7 +7,7 @@ class About extends Component {
   render() {
     return (
       <div className="about">
-        <Fade left>
+        <Fade bottom>
           <div className="about__profile">
             <h3>
               I'm a developer. A web developer. From Brazil, now living in

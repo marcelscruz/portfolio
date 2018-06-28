@@ -4,7 +4,12 @@ import Fade from 'react-reveal/Fade'
 const Menu = props => (
   <Fade top>
     <div className="menu">
-      <div className="logo" />
+      <div
+        className="logo"
+        onClick={() => {
+          props.scrollPage('Welcome')
+        }}
+      />
       <li className="menu__list">
         <ul>
           <button
@@ -16,9 +21,26 @@ const Menu = props => (
             About
           </button>
         </ul>
-        {/* <ul>About</ul> */}
-        <ul>Experience</ul>
-        <ul>Contact</ul>
+        <ul>
+          <button
+            className="menu__button"
+            onClick={() => {
+              props.scrollPage('Experience')
+            }}
+          >
+            Experience
+          </button>
+        </ul>
+        <ul>
+          <button
+            className="menu__button"
+            onClick={() => {
+              props.scrollPage('Contact')
+            }}
+          >
+            Contact
+          </button>
+        </ul>
       </li>
     </div>
   </Fade>

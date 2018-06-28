@@ -39,4 +39,6 @@
   font-family: 'Raleway', sans-serif;
   font-size: 1.5vw;
   font-weight: 200;
+  /* transform: rotate(90deg); */
+  transform-origin: left top 0;
 }

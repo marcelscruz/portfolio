@@ -32,7 +32,7 @@ class Charts extends Component {
 
     return (
       <div className="chart">
-        <Fade>
+        <Fade bottom>
           <div className="chart__bars">
             {skills.map((skill, index) => {
               const { skillName, level, color, scaleY } = skill
@@ -47,7 +47,7 @@ class Charts extends Component {
                     transform: `scaleY(
                     ${this.state.scaleY ? this.state.scaleY : scaleY}
                   )`,
-                    width: `${100 / skills.length * (index + 1)}%`,
+                    width: `${(100 / skills.length) * (index + 1)}%`,
                     zIndex: skills.length - index,
                   }}
                 >

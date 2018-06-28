@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import Fade from 'react-reveal/Fade'
+import Zoom from 'react-reveal/Zoom'
 import axios from 'axios'
 
 class Contact extends Component {
@@ -99,72 +101,80 @@ class Contact extends Component {
   render() {
     return (
       <div className="contact">
-        <h2>Let's get in touch</h2>
-        <div className="contact__sections">
-          <form className="contact__form" onSubmit={this.onSubmit}>
-            <div className="inputs">
-              <input
-                type="text"
-                className="form__input input__name"
-                placeholder="*Name"
-                value={this.state.name}
-                onChange={this.onNameChange}
+        <Zoom>
+          <h2>Let's get in touch</h2>
+        </Zoom>
+        <Fade bottom>
+          <div className="contact__sections">
+            <form className="contact__form" onSubmit={this.onSubmit}>
+              <div className="inputs">
+                <input
+                  type="text"
+                  className="form__input input__name"
+                  placeholder="*Name"
+                  value={this.state.name}
+                  onChange={this.onNameChange}
+                  required
+                />
+                <input
+                  type="email"
+                  className="form__input input__email"
+                  placeholder="*Email"
+                  value={this.state.email}
+                  onChange={this.onEmailChange}
+                  required
+                />
+              </div>
+              <textarea
+                className="form__input textarea"
+                placeholder="*Message"
+                value={this.state.message}
+                onChange={this.onMessageChange}
                 required
               />
-              <input
-                type="email"
-                className="form__input input__email"
-                placeholder="*Email"
-                value={this.state.email}
-                onChange={this.onEmailChange}
-                required
-              />
-            </div>
-            <textarea
-              className="form__input textarea"
-              placeholder="*Message"
-              value={this.state.message}
-              onChange={this.onMessageChange}
-              required
-            />
-            <div className="submit-result">
-              <h4>{this.state.submitResult}</h4>
-            </div>
-            <button className="contact__button">Send</button>
-          </form>
-          <div className="social-medias">
-            <h3>Elsewhere</h3>
-            <div className="social-medias__button">
-              <a
-                href="https://www.linkedin.com/in/marcelscruz/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fab fa-linkedin" />
-                <h4>LinkedIn</h4>
-              </a>
-            </div>
-            <div className="social-medias__button">
-              <a
-                href="https://https://github.com/marcelscruz"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fab fa-github" />
-                <h4>GitHub</h4>
-              </a>
-            </div>
-            <div className="download-cv">
-              <a
-                className="download__button"
-                href="resume.pdf"
-                download="MarcelCruz-Resume.pdf"
-              >
-                Download CV
-              </a>
+              <div className="submit-result">
+                {this.state.submitResult && (
+                  <Fade left>
+                    <h4>{this.state.submitResult}</h4>
+                  </Fade>
+                )}
+              </div>
+              <button className="contact__button">Send</button>
+            </form>
+            <div className="social-medias">
+              <h3>Elsewhere</h3>
+              <div className="social-medias__button">
+                <a
+                  href="https://www.linkedin.com/in/marcelscruz/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fab fa-linkedin" />
+                  <h4>LinkedIn</h4>
+                </a>
+              </div>
+              <div className="social-medias__button">
+                <a
+                  href="https://github.com/marcelscruz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fab fa-github" />
+                  <h4>GitHub</h4>
+                </a>
+              </div>
+              <div className="download-cv">
+                <a
+                  className="download__button"
+                  href="resume.pdf"
+                  download="MarcelCruz-Resume.pdf"
+                >
+                  Download CV
+                </a>
+              </div>
             </div>
           </div>
-        </div>
+        </Fade>
       </div>
     )
   }

@@ -10,22 +10,33 @@ import Contact from './components/Contact'
 
 class App extends Component {
   scrollPage = component => {
-    console.log(component)
-    scrollToComponent(this.About)
+    scrollToComponent(this[component], { offset: -45, align: 'top' })
   }
 
   render() {
     return (
       <div className="app">
         <Menu scrollPage={this.scrollPage} />
-        <Welcome />
+        <Welcome
+          ref={section => {
+            this.Welcome = section
+          }}
+        />
         <About
           ref={section => {
             this.About = section
           }}
         />
-        <Experience />
-        <Contact />
+        <Experience
+          ref={section => {
+            this.Experience = section
+          }}
+        />
+        <Contact
+          ref={section => {
+            this.Contact = section
+          }}
+        />
       </div>
     )
   }
