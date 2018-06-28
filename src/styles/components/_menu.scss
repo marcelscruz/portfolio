@@ -1,8 +1,9 @@
 .menu {
   align-items: center;
-  background: #2e2e2e;
-  border-bottom: #ccc 2px solid;
-  box-shadow: 0 1px 10px #2e2e2e;
+  // background: red;
+  background: $base-dark;
+  border-bottom: $border;
+  box-shadow: $shadow;
   display: flex;
   /* height: 5vh; */
   height: 50px;
