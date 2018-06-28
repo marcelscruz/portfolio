@@ -1,21 +1,32 @@
 .welcome {
-  height: 96vh;
-  margin-top: 48px;
-  /* 2px LESS THAN MENU HEIGHT TO FILL GAP BETWEEN PICTURE AND MENU */
+  height: 95vh; // Menu has 6vh, 1vh more to hide Experience border
+  margin-top: 6vh; // To not be overlapped by menu
   position: relative;
-  width: 100vw;
+
+  @media (max-width: $mobile) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .title {
   margin: 15% 0 0 10%;
   text-align: left;
+
+  @media (max-width: $mobile) {
+    margin: 10% 0 0 10%;
+  }
 }
 
 .title h1 {
-  font-family: 'Raleway', sans-serif;
   font-size: 7vw;
-  font-weight: 700;
+  font-weight: $thick;
   letter-spacing: -1px;
+
+  @media (max-width: $mobile) {
+    font-size: 15vw;
+    width: 40vw;
+  }
 }
 
 .title--highlight {
@@ -24,26 +35,47 @@
 
 .title h2 {
   border-top: 0.15vw solid #2e2e2e;
-  font-family: 'Raleway', sans-serif;
   font-size: 1.8vw;
-  font-weight: 400;
-  padding-top: 10px;
+  font-weight: $medium;
+  padding-top: 1vw;
   width: 22.5vw;
+
+  @media (max-width: $mobile) {
+    font-size: 5vw;
+    width: 48vw;
+  }
 }
 
 .welcome__content {
-  /* background: lightblue; */
   float: left;
-  height: inherit;
   width: 60vw;
+
+  @media (max-width: $mobile) {
+    float: none;
+    height: 40%;
+    width: 100vw;
+  }
 }
 
 .welcome__picture {
   background: url('/images/profile-web.jpg') no-repeat 35% center / cover;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+  -moz-clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+  -ms-clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+  -o-clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
   float: right;
-  height: 105%;
-  shape-margin: 20px;
-  shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+  height: 100%;
   width: 40vw;
+
+  @media (max-width: $mobile) {
+    background-position: center bottom;
+    clip-path: polygon(0% 20%, 100% 0, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0% 20%, 100% 0, 100% 100%, 0 100%);
+    -moz-clip-path: polygon(0% 20%, 100% 0, 100% 100%, 0 100%);
+    -ms-clip-path: polygon(0% 20%, 100% 0, 100% 100%, 0 100%);
+    -o-clip-path: polygon(0% 20%, 100% 0, 100% 100%, 0 100%);
+    position: relative;
+    width: 100vw;
+  }
 }

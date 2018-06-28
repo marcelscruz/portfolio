@@ -1,27 +1,37 @@
 .menu {
   align-items: center;
-  // background: red;
+  background: transparent;
   background: $base-dark;
   border-bottom: $border;
   box-shadow: $shadow;
   display: flex;
-  /* height: 5vh; */
-  height: 50px;
+  height: 6vh;
   justify-content: center;
   position: fixed;
   top: 0;
   width: 100vw;
   z-index: 100;
+
+  @media (max-width: $mobile) {
+    height: 8vh;
+    justify-content: flex-end;
+    padding-right: 20vw;
+  }
 }
 
 .logo {
   background: url('/images/logo.png') no-repeat center center / cover;
   cursor: pointer;
-  height: 35px;
-  left: 50px;
+  height: 2.8vw;
+  left: 7vw;
   opacity: 0.8;
   position: absolute;
-  width: 35px;
+  width: 2.8vw;
+
+  @media (max-width: $mobile) {
+    height: 8vw;
+    width: 8vw;
+  }
 }
 
 .menu__list {
@@ -37,17 +47,25 @@
 .menu__button {
   background: none;
   border: none;
-  border-bottom: transparent 1px solid;
-  color: #eee;
+  border-bottom: $border-transparent;
+  color: $base-light;
   cursor: pointer;
-  font-family: 'Raleway', sans-serif;
+  font-family: $font;
   font-size: 1.6vw;
-  /* font-size: 20px; */
-  font-weight: 200;
+  font-weight: $thin;
   outline: none;
   transition: 0.3s linear;
+
+  @media (max-width: $mobile) {
+    font-size: 4vw;
+    font-weight: $medium;
+  }
 }
 
 .menu__button:hover {
-  border-color: #eee;
+  border-color: $base-light;
+
+  @media (max-width: $mobile) {
+    border-color: transparent;
+  }
 }

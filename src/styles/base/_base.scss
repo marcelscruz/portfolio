@@ -1,27 +1,33 @@
 @import url('https://fonts.googleapis.com/css?family=Barrio|Raleway:200,400,700');
 
-*,
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
-  box-sizing: border-box;
-  color: #2e2e2e;
+h6,
+p,
+span,
+button,
+a,
+li {
   font-family: 'Raleway', sans-serif;
   margin: 0;
   padding: 0;
 }
 
 body {
-  background: #eee;
-  font-family: sans-serif;
-  height: 100%;
+  background: $base-light;
+  color: $base-dark;
 }
 
 .app {
   height: 100vh;
-  text-align: center;
   width: 100vw;
 }

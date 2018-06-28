@@ -1,13 +1,15 @@
 .about {
-  background: #2e2e2e;
-  border-bottom: #ccc 2px solid;
-  border-top: #ccc 2px solid;
+  background: $base-dark;
+  border-bottom: $border;
+  border-top: $border;
   box-shadow: $shadow;
   display: flex;
   height: 70vh;
-  top: -2px; /* TO FILL GAP BETWEEN PICTURE AND MENU*/
-  position: relative;
   width: 100vw;
+
+  @media (max-width: $mobile) {
+    flex-direction: column;
+  }
 }
 
 .about__profile {
@@ -16,22 +18,35 @@
   padding: 5vw;
   text-align: justify;
   width: 45%;
+
+  @media (max-width: $mobile) {
+    margin: 0 auto;
+    width: 90%;
+  }
 }
 
 .about__profile h3 {
-  color: #eee;
+  color: $base-light;
   display: inline;
-  font-family: 'Raleway', sans-serif;
   font-size: 1.7vw;
-  font-weight: 200;
+  font-weight: $thin;
   line-height: 4vh;
+
+  @media (max-width: $mobile) {
+    margin-top: 8vh;
+    font-size: 4vw;
+  }
 }
 
 .about__skills {
-  /* background: lightblue; */
   display: flex;
   flex-direction: column;
   height: 100%;
   justify-content: center;
   width: 55%;
+
+  @media (max-width: $mobile) {
+    margin: 0 auto;
+    width: 70%;
+  }
 }

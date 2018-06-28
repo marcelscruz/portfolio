@@ -1,9 +1,21 @@
+// Borders
+$border: #ccc 2px solid;
+$border-transparent: transparent 1px solid;
+
 // Colours
 
 $base-dark: #2e2e2e;
+$base-light: #eee;
 
-// Borders
-$border: #ccc 2px solid;
+// Font
+$font: 'Raleway', sans-serif;
+$thin: 200;
+$medium: 400;
+$thick: 700;
 
 // Shadow
-$shadow: 0 0px 10px red;
+$shadow: 0 0px 10px #2e2e2e;
+
+// Spacing
+
+$mobile: 450px;
