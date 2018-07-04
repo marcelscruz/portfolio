@@ -14,8 +14,11 @@ class Experience extends Component {
         role: 'Full stack',
         technologies:
           'JavaScript | React | Redux | Sass | Node.js | Firebase | Git',
-        link: 'http://www.fredfy.com',
-        image: '/images/fredfy-web.jpg',
+        link:
+          'https://projects.invisionapp.com/share/FWJ21Y99EMT#/screens/294269992',
+        // link: 'http://www.fredfy.com',
+        image: '/images/fredfy-web-under-construction.jpg',
+        // image: '/images/fredfy-web.jpg',
       },
       {
         name: 'Xunison',

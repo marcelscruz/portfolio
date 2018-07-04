@@ -14,19 +14,23 @@
   }
 }
 
+$image-width-desktop: 33vw;
+$image-width-mobile: 80vw;
+
 .experience__image {
   border: $border;
   border-radius: 5px;
+  box-sizing: unset;
   box-shadow: $shadow;
-  height: 37vh;
+  height: $image-width-desktop / 1.6;
   margin-left: 1vw;
   transition: transform 0.4s ease-in-out;
-  width: 33vw;
+  width: $image-width-desktop;
 
   @media (max-width: $mobile) {
-    height: 30vh;
+    height: $image-width-mobile / 1.6;
     margin: 2vh 0;
-    width: 80vw;
+    width: $image-width-mobile;
   }
 }
 
