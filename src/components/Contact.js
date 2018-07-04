@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Fade from 'react-reveal/Fade'
 import Zoom from 'react-reveal/Zoom'
 import axios from 'axios'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 class Contact extends Component {
   constructor(props) {
@@ -149,7 +151,10 @@ class Contact extends Component {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i className="fab fa-linkedin" />
+                  <FontAwesomeIcon
+                    icon={faLinkedin}
+                    className="social-medias__icon"
+                  />
                   <h4>LinkedIn</h4>
                 </a>
               </div>
@@ -159,7 +164,10 @@ class Contact extends Component {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i className="fab fa-github" />
+                  <FontAwesomeIcon
+                    icon={faGithub}
+                    className="social-medias__icon"
+                  />
                   <h4>GitHub</h4>
                 </a>
               </div>

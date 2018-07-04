@@ -151,12 +151,17 @@
   letter-spacing: 0.05vw;
 }
 
-.fab {
+// .fab {
+//   color: $base-light;
+//   padding: 0px 2.5vw 0 0;
+//   font-size: 3.2vh;
+//   width: 40px;
+//   text-decoration: none;
+// }
+
+.social-medias__icon {
   color: $base-light;
-  padding: 0px 2.5vw 0 0;
-  font-size: 3.2vh;
-  width: 40px;
-  text-decoration: none;
+  margin-right: 1vw;
 }
 
 .download-cv {
