@@ -81,6 +81,11 @@
 
 .submit-result {
   height: 2.6vh;
+  margin: 1vw 0;
+
+  @media (max-width: $mobile) {
+    margin: 2vw 0;
+  }
 }
 
 .submit-result h4 {
@@ -111,6 +116,7 @@
   text-align: left;
 
   @media (max-width: $mobile) {
+    font-size: 6vw;
     left: 0;
   }
 }
@@ -151,14 +157,6 @@
   letter-spacing: 0.05vw;
 }
 
-// .fab {
-//   color: $base-light;
-//   padding: 0px 2.5vw 0 0;
-//   font-size: 3.2vh;
-//   width: 40px;
-//   text-decoration: none;
-// }
-
 .social-medias__icon {
   color: $base-light;
   margin-right: 1vw;
@@ -183,6 +181,7 @@
   width: 11vw;
 
   @media (max-width: $mobile) {
+    font-size: 4vw;
     width: 20vw;
   }
 }

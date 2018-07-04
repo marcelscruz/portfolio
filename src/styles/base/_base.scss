@@ -5,6 +5,10 @@
   font-family: 'Raleway', sans-serif;
   margin: 0;
   padding: 0;
+
+  @media (max-width: $mobile) {
+    transition: height 1000000000000000s, width 1000000000000000s !important;
+  }
 }
 
 h1,
