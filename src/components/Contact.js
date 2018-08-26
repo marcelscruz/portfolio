@@ -3,7 +3,11 @@ import Fade from 'react-reveal/Fade'
 import Zoom from 'react-reveal/Zoom'
 import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import {
+  faGithub,
+  faLinkedin,
+  faTwitter,
+} from '@fortawesome/free-brands-svg-icons'
 
 class Contact extends Component {
   constructor(props) {
@@ -169,6 +173,19 @@ class Contact extends Component {
                     className="social-medias__icon"
                   />
                   <h4>GitHub</h4>
+                </a>
+              </div>
+              <div className="social-medias__button">
+                <a
+                  href="https://twitter.com/marcelcruz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FontAwesomeIcon
+                    icon={faTwitter}
+                    className="social-medias__icon"
+                  />
+                  <h4>Twitter</h4>
                 </a>
               </div>
               <div className="download-cv">
