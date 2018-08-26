@@ -171,11 +171,11 @@
 .download__button {
   background: $base-dark;
   border: $border;
-  border-radius: 3px;
+  border-radius: 30px;
   color: $base-light;
   cursor: pointer;
   font-size: 2.3vh;
-  height: 5vh;
+  height: 6vh;
   outline: none;
   transition: 0.2s linear;
   width: 11vw;
@@ -186,16 +186,21 @@
   }
 }
 
+.download__button a {
+  color: $base-light;
+  text-decoration: none;
+  margin: 0 auto;
+}
+
 .contact__button:hover,
 .contact__button:focus,
 .download__button:hover,
 .download__button:focus {
   background: $base-light;
   color: $base-dark;
-}
+  transform: scale(1.1);
 
-.download__button {
-  border: $border;
-  padding: 1vh 3vw;
-  text-decoration: none;
+  a {
+    color: $base-dark;
+  }
 }

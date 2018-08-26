@@ -189,13 +189,22 @@ class Contact extends Component {
                 </a>
               </div>
               <div className="download-cv">
-                <a
+                <button className="download__button">
+                  <a
+                    // className="download__button"
+                    href="resume.pdf"
+                    download="MarcelCruz-Resume.pdf"
+                  >
+                    Download
+                  </a>
+                </button>
+                {/* <a
                   className="download__button"
                   href="resume.pdf"
                   download="MarcelCruz-Resume.pdf"
                 >
                   Download CV
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
