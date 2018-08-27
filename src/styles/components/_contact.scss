@@ -197,6 +197,7 @@
 .download__button:hover,
 .download__button:focus {
   background: $base-light;
+  border-color: $base-light;
   color: $base-dark;
   transform: scale(1.1);
 

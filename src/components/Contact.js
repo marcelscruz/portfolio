@@ -107,104 +107,94 @@ class Contact extends Component {
   render() {
     return (
       <div className="contact">
-        <Zoom>
-          <h2>Let's get in touch</h2>
-        </Zoom>
-        <Fade bottom>
-          <div className="contact__sections">
-            <form className="contact__form" onSubmit={this.onSubmit}>
-              <div className="inputs">
-                <input
-                  type="text"
-                  className="form__input input__name"
-                  placeholder="*Name"
-                  value={this.state.name}
-                  onChange={this.onNameChange}
+        <Fade>
+          <div>
+            <h2>Let's get in touch</h2>
+
+            <div className="contact__sections">
+              <form className="contact__form" onSubmit={this.onSubmit}>
+                <div className="inputs">
+                  <input
+                    type="text"
+                    className="form__input input__name"
+                    placeholder="*Name"
+                    value={this.state.name}
+                    onChange={this.onNameChange}
+                    required
+                  />
+                  <input
+                    type="email"
+                    className="form__input input__email"
+                    placeholder="*Email"
+                    value={this.state.email}
+                    onChange={this.onEmailChange}
+                    required
+                  />
+                </div>
+                <textarea
+                  className="form__input textarea"
+                  placeholder="*Message"
+                  value={this.state.message}
+                  onChange={this.onMessageChange}
                   required
                 />
-                <input
-                  type="email"
-                  className="form__input input__email"
-                  placeholder="*Email"
-                  value={this.state.email}
-                  onChange={this.onEmailChange}
-                  required
-                />
-              </div>
-              <textarea
-                className="form__input textarea"
-                placeholder="*Message"
-                value={this.state.message}
-                onChange={this.onMessageChange}
-                required
-              />
-              <div className="submit-result">
-                {this.state.submitResult && (
-                  <Fade left>
-                    <h4>{this.state.submitResult}</h4>
-                  </Fade>
-                )}
-              </div>
-              <button className="contact__button">Send</button>
-            </form>
-            <div className="social-medias">
-              <h3>Elsewhere</h3>
-              <div className="social-medias__button">
-                <a
-                  href="https://www.linkedin.com/in/marcelscruz/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FontAwesomeIcon
-                    icon={faLinkedin}
-                    className="social-medias__icon"
-                  />
-                  <h4>LinkedIn</h4>
-                </a>
-              </div>
-              <div className="social-medias__button">
-                <a
-                  href="https://github.com/marcelscruz"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FontAwesomeIcon
-                    icon={faGithub}
-                    className="social-medias__icon"
-                  />
-                  <h4>GitHub</h4>
-                </a>
-              </div>
-              <div className="social-medias__button">
-                <a
-                  href="https://twitter.com/marcelcruz"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FontAwesomeIcon
-                    icon={faTwitter}
-                    className="social-medias__icon"
-                  />
-                  <h4>Twitter</h4>
-                </a>
-              </div>
-              <div className="download-cv">
-                <button className="download__button">
+                <div className="submit-result">
+                  {this.state.submitResult && (
+                    <Fade left>
+                      <h4>{this.state.submitResult}</h4>
+                    </Fade>
+                  )}
+                </div>
+                <button className="contact__button">Send</button>
+              </form>
+              <div className="social-medias">
+                <h3>Elsewhere</h3>
+                <div className="social-medias__button">
                   <a
-                    // className="download__button"
-                    href="resume.pdf"
-                    download="MarcelCruz-Resume.pdf"
+                    href="https://www.linkedin.com/in/marcelscruz/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    Download
+                    <FontAwesomeIcon
+                      icon={faLinkedin}
+                      className="social-medias__icon"
+                    />
+                    <h4>LinkedIn</h4>
                   </a>
-                </button>
-                {/* <a
-                  className="download__button"
-                  href="resume.pdf"
-                  download="MarcelCruz-Resume.pdf"
-                >
-                  Download CV
-                </a> */}
+                </div>
+                <div className="social-medias__button">
+                  <a
+                    href="https://github.com/marcelscruz"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FontAwesomeIcon
+                      icon={faGithub}
+                      className="social-medias__icon"
+                    />
+                    <h4>GitHub</h4>
+                  </a>
+                </div>
+                <div className="social-medias__button">
+                  <a
+                    href="https://twitter.com/marcelcruz"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FontAwesomeIcon
+                      icon={faTwitter}
+                      className="social-medias__icon"
+                    />
+                    <h4>Twitter</h4>
+                  </a>
+                </div>
+                <div className="download-cv">
+                  <button className="download__button">
+                    <a href="resume.pdf" download="MarcelCruz-Resume.pdf">
+                      Download CV
+                    </a>
+                  </button>
+                </div>
               </div>
             </div>
           </div>

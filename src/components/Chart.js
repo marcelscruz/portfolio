@@ -6,14 +6,14 @@ class Charts extends Component {
     super(props)
 
     this.state = {
-      scaleY: undefined,
+      scale: undefined,
     }
   }
 
   componentDidMount() {
     const checkVisibility = setInterval(() => {
       if (this.props.isVisible) {
-        this.setState({ scaleY: 1 })
+        this.setState({ scale: 1 })
         clearInterval(checkVisibility)
       }
     }, 500)
@@ -21,37 +21,44 @@ class Charts extends Component {
 
   render() {
     const skills = [
-      { skillName: 'JS', level: 10, color: 'bca538', scaleY: 0.5 },
-      { skillName: 'HTML', level: 9, color: 'af4336', scaleY: 0.3 },
-      { skillName: 'React', level: 8, color: '4c9dc7', scaleY: 1.2 },
-      { skillName: 'CSS', level: 8, color: '2f81b7', scaleY: 0.8 },
-      { skillName: 'Redux', level: 7, color: 'a87cd8', scaleY: 0.9 },
-      { skillName: 'Git', level: 7, color: '89321f', scaleY: 1.3 },
-      { skillName: 'Node', level: 6, color: '779643', scaleY: 0.8 },
+      { skillName: 'JavaScript', level: 10, color: 'bca538' },
+      { skillName: 'HTML', level: 9, color: 'af4336' },
+      { skillName: 'CSS', level: 9, color: '2f81b7' },
+      { skillName: 'React', level: 9, color: '4c9dc7' },
+      { skillName: 'Redux', level: 9, color: 'a87cd8' },
+      { skillName: 'Node.js', level: 8, color: '779643' },
+      { skillName: 'MongoDB', level: 8, color: '499f50' },
+      { skillName: 'Git', level: 8, color: '89321f' },
+      { skillName: 'Firebase', level: 7, color: 'fac34b' },
+      { skillName: 'AWS', level: 7, color: 'e38b33' },
     ]
 
     return (
       <div className="chart">
-        <Fade bottom>
+        <Fade>
           <div className="chart__bars">
             {skills.map((skill, index) => {
-              const { skillName, level, color, scaleY } = skill
+              const { skillName, level, color } = skill
+              const { scale } = this.state
 
               return (
                 <div
-                  className="chart__bars__item"
+                  className={`chart__bars__item ${scale && 'grow'}`}
                   key={skillName}
                   style={{
                     background: `#${color}`,
-                    height: `${10 * level}%`,
-                    transform: `scaleY(
-                    ${this.state.scaleY ? this.state.scaleY : scaleY}
-                  )`,
-                    width: `${(100 / skills.length) * (index + 1)}%`,
+                    height: `${(100 / skills.length) * (index + 1)}%`,
+                    width: `${scale ? level * 10 : 0}%`,
                     zIndex: skills.length - index,
                   }}
                 >
-                  <h4>{skillName}</h4>
+                  <h4
+                    style={{
+                      opacity: `${scale ? 1 : 0}`,
+                    }}
+                  >
+                    {skillName}
+                  </h4>
                 </div>
               )
             })}
