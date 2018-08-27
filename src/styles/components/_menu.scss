@@ -22,11 +22,11 @@
 .logo {
   background: url('/images/logo.png') no-repeat center center / cover;
   cursor: pointer;
-  height: 2.8vw;
+  height: 2.4vw;
   left: 7vw;
   opacity: 0.8;
   position: absolute;
-  width: 2.8vw;
+  width: 2.4vw;
 
   @media (max-width: $mobile) {
     height: 8vw;
