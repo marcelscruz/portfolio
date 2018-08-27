@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Fade from 'react-reveal/Fade'
-import Zoom from 'react-reveal/Zoom'
 import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
