@@ -4,6 +4,11 @@ import Zoom from 'react-reveal/Zoom'
 
 class Experience extends Component {
   render() {
+    // Check if user is using mobile
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent,
+    )
+
     const experiences = [
       {
         name: 'Fredfy',
@@ -27,7 +32,7 @@ class Experience extends Component {
         role: 'Front end',
         description:
           'A fast growing startup that develops both their hardware and software, providing many products, including smart home automation, streaming devices and IPTV/OTT.',
-        technologies: 'HTML | CSS | JavaScript | jQuery | AJAX | Git',
+        technologies: 'HTML | CSS | JavaScript | jQuery | Git',
         link: 'https://xunison.com/',
         image: '/images/xunison-web.jpg',
       },
@@ -68,9 +73,16 @@ class Experience extends Component {
                     </h2>
                     <h4>{date}</h4>
                     <h3>{description}</h3>
-                    <h4>
-                      {role} developer - {technologies}
-                    </h4>
+                    {isMobile ? (
+                      <div>
+                        <h3 className="role">{role} developer</h3>
+                        <h4>{technologies}</h4>
+                      </div>
+                    ) : (
+                      <h4>
+                        {role} developer - {technologies}
+                      </h4>
+                    )}
                     <a href={link} target="_blank" className="external-link">
                       Visit
                     </a>

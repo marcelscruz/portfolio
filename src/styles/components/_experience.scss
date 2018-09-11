@@ -7,7 +7,7 @@
 .experience__item {
   align-items: center;
   display: flex;
-  padding: 3vw;
+  padding: 3vw 3vw 0vw;
 
   @media (max-width: $mobile) {
     flex-direction: column;
@@ -81,6 +81,10 @@ $image-width-mobile: 80vw;
   @media (max-width: $mobile) {
     font-size: 4vw;
   }
+}
+
+.experience__description .role {
+  text-align: center;
 }
 
 .experience__description h4 {

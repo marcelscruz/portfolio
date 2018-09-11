@@ -6,20 +6,25 @@ class Charts extends Component {
     super(props)
 
     this.state = {
-      scale: undefined,
+      scale: false,
     }
   }
 
   componentDidMount() {
     const checkVisibility = setInterval(() => {
       if (this.props.isVisible) {
-        this.setState({ scale: 1 })
+        this.setState({ scale: true })
         clearInterval(checkVisibility)
       }
     }, 500)
   }
 
   render() {
+    // Check if user is using mobile
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent,
+    )
+
     const skills = [
       { skillName: 'JavaScript', level: 10, color: 'bca538' },
       { skillName: 'HTML', level: 9, color: 'af4336' },
@@ -35,7 +40,7 @@ class Charts extends Component {
 
     return (
       <div className="chart">
-        <Fade>
+        <Fade bottom={isMobile}>
           <div className="chart__bars">
             {skills.map((skill, index) => {
               const { skillName, level, color } = skill
@@ -43,18 +48,21 @@ class Charts extends Component {
 
               return (
                 <div
-                  className={`chart__bars__item ${scale && 'grow'}`}
+                  className="chart__bars__item"
                   key={skillName}
                   style={{
                     background: `#${color}`,
                     height: `${(100 / skills.length) * (index + 1)}%`,
-                    width: `${scale ? level * 10 : 0}%`,
+                    // width: `${scale ? level * 10 : 0}%`,
+                    width: isMobile
+                      ? `${level * 10}%`
+                      : `${scale ? level * 10 : 0}%`,
                     zIndex: skills.length - index,
                   }}
                 >
                   <h4
                     style={{
-                      opacity: `${scale ? 1 : 0}`,
+                      opacity: isMobile ? 1 : `${scale ? 1 : 0}`,
                     }}
                   >
                     {skillName}
